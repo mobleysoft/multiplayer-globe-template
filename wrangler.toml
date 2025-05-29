@@ -1,0 +1,18 @@
+name = "multiplayer-globe-template"
+main = "index.html"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Account and route settings from your wrangler.json
+account_id = "YOUR_ACCOUNT_ID"  # You can get this with: wrangler whoami
+
+# The durable object binding
+[[durable_objects.bindings]]
+name = "Globe"
+class_name = "Globe"
+script_name = "multiplayer-globe-template"
+
+# Since this uses Durable Objects, we'll need these migrations
+[[migrations]]
+tag = "v1"
+new_classes = ["Globe"]
